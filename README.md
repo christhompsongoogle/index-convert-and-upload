@@ -67,7 +67,12 @@ firebase firestore:indexes
 firebase deploy --only firestore:indexes
 
 ## Transform emulator json to firestore.indexes.json in combine_indexes.ts
-As a proof of concept run `npm run start2`. Some additional work is required to replace firestore.indexes.json with the new code.
+As a proof of concept run
+
+curl http://127.0.0.1:8080/emulator/v1/projects/ctfirestoreindexes:indexUsage?database=projects/ctfirestoreindexes/databases/\(default\) > emulator_index_dump.json
+npm run convertTofirestoreIndexesJson
+
+This will print out the new json file. Some additional work is required to replace firestore.indexes.json with the new json.
 
 ## Transform notes in combine_indexes.ts
 removes __name__

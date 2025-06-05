@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node src/index.ts",
-    "start2": "ts-node src/combine_indexes.ts"
+    "runQueriesAgainstEmulator": "ts-node src/index.ts",
+    "convertTofirestoreIndexesJson": "ts-node src/combine_indexes.ts"
   },
   "author": "ct",
   "license": "ISC",

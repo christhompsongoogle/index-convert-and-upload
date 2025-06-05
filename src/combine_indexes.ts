@@ -1,3 +1,5 @@
+import { readFileSync } from 'fs';
+
 interface FirestoreIndexes {
   indexes: Index[];
   fieldOverrides: any[];
@@ -92,53 +94,7 @@ const firestoreIndexesJson: FirestoreIndexes = {
   fieldOverrides: [],
 };
 
-const localIndexDump: IndexDump = JSON.parse(
-    `{
-  "reports": [
-    {
-      "index": {
-        "name": "projects/ctfirestoreindexes/databases/(default)/collectionGroups/cities/indexes/_",
-        "queryScope": "COLLECTION",
-        "fields": [
-          {
-            "fieldPath": "name",
-            "order": "ASCENDING"
-          },
-          {
-            "fieldPath": "state",
-            "order": "ASCENDING"
-          },
-          {
-            "fieldPath": "__name__",
-            "order": "ASCENDING"
-          }
-        ]
-      },
-      "numQueries": "6"
-    },
-    {
-      "index": {
-        "name": "projects/ctfirestoreindexes/databases/(default)/collectionGroups/cities/indexes/_",
-        "queryScope": "COLLECTION",
-        "fields": [
-          {
-            "fieldPath": "state",
-            "order": "ASCENDING"
-          },
-          {
-            "fieldPath": "population",
-            "order": "ASCENDING"
-          },
-          {
-            "fieldPath": "__name__",
-            "order": "ASCENDING"
-          }
-        ]
-      },
-      "numQueries": "2"
-    }
-  ]
-}`);
+const localIndexDump: IndexDump = JSON.parse(readFileSync('emulator_index_dump.json', 'utf8'));
 
 const updatedFirestoreIndexes = convertAndAddIndexes(
   firestoreIndexesJson,
