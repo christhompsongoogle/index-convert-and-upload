@@ -66,8 +66,11 @@ firebase firestore:indexes
 ## to deploy new indexes:
 firebase deploy --only firestore:indexes
 
+## Transform emulator json to firestore.indexes.json in combine_indexes.ts
+As a proof of concept run `npm run start2`. Some additional work is required to replace firestore.indexes.json with the new code.
+
 ## Transform notes in combine_indexes.ts
-remove __name__
+removes __name__
 convert "name" to "collectionGroup" by taking the collection ID
 flatten reports.index
 delete numQueries
