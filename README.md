@@ -16,8 +16,11 @@ Ensure firebase.json includes databases and indexes
 
 ## To run
 firebase emulators:start --project=ctfirestoreindexes
+
 npm run build
+
 npm run start
+
 curl http://127.0.0.1:8080/emulator/v1/projects/ctfirestoreindexes:indexUsage?database=projects/ctfirestoreindexes/databases/\(default\)
 
 ## Returns the following indexes:
