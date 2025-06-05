@@ -1,0 +1,21 @@
+{
+  "name": "firestoreindexestesting",
+  "version": "1.0.0",
+  "description": "testing indexes",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "start2": "ts-node src/combine_indexes.ts"
+  },
+  "author": "ct",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "firebase": "^11.8.0"
+  }
+}
