@@ -5,7 +5,7 @@ npm init
 npm install --save-dev typescript @types/node
 npx tsc --init
 add `"build": "tsc"` to package.json
-  "start": "ts-node src/index.ts"
+  "runQueriesAgainstEmulator": "ts-node src/index.ts"
 
 ADd tsconfig:
 
@@ -19,7 +19,7 @@ firebase emulators:start --project=ctfirestoreindexes
 
 npm run build
 
-npm run start
+npm run runQueriesAgainstEmulator
 
 curl http://127.0.0.1:8080/emulator/v1/projects/ctfirestoreindexes:indexUsage?database=projects/ctfirestoreindexes/databases/\(default\)
 
